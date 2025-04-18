@@ -1,0 +1,26 @@
+CREATE TABLE HR.EMPLOYEE 
+(
+EmployeeID NUMBER(3) NOT NULL PRIMARY KEY,
+FirstName VARCHAR2(50),
+LastName VARCHAR2(50),
+Department VARCHAR2(10),
+Salary NUMBER(8)
+);
+
+INSERT ALL
+	INTO HR.EMPLOYEE (EmployeeID,FirstName,LastName,Department,Salary) VALUES (101,'John1','Doe1','HR',20000)
+	INTO HR.EMPLOYEE (EmployeeID,FirstName,LastName,Department,Salary) VALUES (102,'John2','Doe2','IT',50000)
+	INTO HR.EMPLOYEE (EmployeeID,FirstName,LastName,Department,Salary) VALUES (103,'John3','Doe3','CS',40000)
+	INTO HR.EMPLOYEE (EmployeeID,FirstName,LastName,Department,Salary) VALUES (104,'John4','Doe4','IT',10000)
+	INTO HR.EMPLOYEE (EmployeeID,FirstName,LastName,Department,Salary) VALUES (105,'John5','Doe5','ZX',30000)
+SELECT * FROM dual;
+
+UPDATE HR.EMPLOYEE e SET e.salary =600000 WHERE e.EMPLOYEEID =101;
+
+DELETE HR.EMPLOYEE e WHERE e.EMPLOYEEID=101;
+
+SELECT * FROM HR.EMPLOYEE e WHERE e.DEPARTMENT ='IT';
+
+SELECT e.EMPLOYEEID,e.FIRSTNAME ||' '||e.LASTNAME AS FULL_NAME,e.DEPARTMENT,e.SALARY FROM HR.EMPLOYEE e;
+
+DROP TABLE HR.EMPLOYEE;

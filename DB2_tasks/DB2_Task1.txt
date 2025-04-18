@@ -1,0 +1,44 @@
+CREATE TABLE HR.DOCTOR 
+(
+id NUMBER(3) NOT NULL PRIMARY KEY,
+name VARCHAR2(50),
+salary NUMBER(8),
+address VARCHAR2(100)
+);
+
+INSERT ALL
+  INTO HR.DOCTOR (id, name, salary, address) VALUES (1, 'Ahmed Alaa', 20000, '10 Ahmed Tayseer')
+  INTO HR.DOCTOR (id, name, salary, address) VALUES (2, 'Mohamed Sherif', 30000, '5 Moahmed Ali')
+  INTO HR.DOCTOR (id, name, salary, address) VALUES (3, 'Karim Abdellatif', 5000, '8 Elnoor')
+  INTO HR.DOCTOR (id, name, salary, address) VALUES (4, 'Ali Ramdan', 35000, '3 Metro')
+  INTO HR.DOCTOR (id, name, salary, address) VALUES (5, 'Belal Adel', 15000, '5 Moahmed Ali')
+  INTO HR.DOCTOR (id, name, salary, address) VALUES (6, 'Youssef Hany', 28000, '12 Abbas El Akkad')
+  INTO HR.DOCTOR (id, name, salary, address) VALUES (7, 'Omar Fathy', 31000, '7 Tahrir Square')
+  INTO HR.DOCTOR (id, name, salary, address) VALUES (8, 'Mostafa Nabil', 29000, '15 Ramsis Street')
+  INTO HR.DOCTOR (id, name, salary, address) VALUES (9, 'Hassan Magdy', 27000, '22 El Haram')
+  INTO HR.DOCTOR (id, name, salary, address) VALUES (10, 'Ibrahim Saeed', 32000, '6 Nasr City')
+  INTO HR.DOCTOR (id, name, salary, address) VALUES (11, 'Tamer Farid', 1000, '4 El Dokki Street')
+  INTO HR.DOCTOR (id, name, salary, address) VALUES (12, 'Amr Khaled', 2000, '9 El Obour Buildings')
+  INTO HR.DOCTOR (id, name, salary, address) VALUES (13, 'Hany Saad', 3000, '22 El Maadi')
+  INTO HR.DOCTOR (id, name, salary, address) VALUES (14, 'Mahmoud Ezzat', 2000, '17 Heliopolis')
+  INTO HR.DOCTOR (id, name, salary, address) VALUES (15, 'Adel Mostafa', 1000, '6 Zamalek')
+  INTO HR.DOCTOR (id, name, salary, address) VALUES (16, 'Nader Galal', 3000, '3 El Rehab City')
+  INTO HR.DOCTOR (id, name, salary, address) VALUES (17, 'Khaled Ashraf', 2000, '8 El Sayeda Zeinab')
+  INTO HR.DOCTOR (id, name, salary, address) VALUES (18, 'Mina Adel', 1000, '11 Shoubra')
+  INTO HR.DOCTOR (id, name, salary, address) VALUES (19, 'Eslam Reda', 3000, '13 Giza Square')
+  INTO HR.DOCTOR (id, name, salary, address) VALUES (20, 'Sherif Anwar', 2000, '19 El Mokattam')
+SELECT * FROM dual;
+
+UPDATE HR.DOCTOR d SET d.SALARY=20000 WHERE d.ID =3;
+
+DELETE HR.DOCTOR d WHERE d.ID=9;
+
+SELECT d.NAME||' ' ||d.SALARY AS RESULT FROM HR.DOCTOR d;
+
+SELECT id,name,SALARY *2 AS DOUBLE_SALARY,address FROM HR.DOCTOR d;
+
+SELECT * FROM HR.DOCTOR d WHERE d.SALARY IN (1000,2000,3000);
+
+ALTER TABLE HR.DOCTOR RENAME TO PRD_DOCTOR;
+
+DROP TABLE HR.PRD_DOCTOR;
