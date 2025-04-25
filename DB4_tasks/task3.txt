@@ -1,0 +1,7 @@
+SELECT TO_CHAR(SYSDATE,'DD-MON-YYYY') FROM dual;
+
+SELECT TO_CHAR(SYSDATE, 'Month YYYY') FROM dual;
+
+SELECT TO_CHAR(12345678, '99,999,999.99') AS formatted_number FROM dual;
+
+SELECT TO_CHAR(salary, '$99,999') AS formatted_salary FROM employees;

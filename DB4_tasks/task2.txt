@@ -1,0 +1,17 @@
+SELECT REPLACE('database','a','@') FROM dual;
+
+SELECT REPLACE('we bought an old car because old cars are great','old','new') FROM dual;
+
+CREATE TABLE PRODUCT (
+    product_name VARCHAR(255)
+);
+
+INSERT ALL
+    INTO PRODUCT (product_name) VALUES ('Milk')
+    INTO PRODUCT (product_name) VALUES ('Eggs')
+    INTO PRODUCT (product_name) VALUES ('Soap')
+SELECT * FROM dual;
+
+SELECT LPAD(product_name,15,'*') FROM HR.PRODUCT;
+
+SELECT RPAD(product_name,15,'*') FROM HR.PRODUCT;

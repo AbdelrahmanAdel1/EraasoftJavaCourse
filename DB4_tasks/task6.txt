@@ -1,0 +1,27 @@
+SELECT s.*,
+       DECODE(TRUNC(s.MARKS/10),
+              9, 'A',
+              8, 'B',
+              7, 'C',
+              'F') AS GRADE
+FROM HR.STUDENTS s;
+
+CREATE TABLE HR.ORDERS(
+status char
+);
+
+INSERT ALL
+	INTO ORDERS VALUES('P')
+	INTO ORDERS VALUES('S')
+	INTO ORDERS VALUES('D')
+	INTO ORDERS VALUES('P')
+	INTO ORDERS VALUES('S')
+	INTO ORDERS VALUES('D')
+SELECT * FROM dual;
+
+SELECT o.*,
+       DECODE(o.STATUS,
+              'P', 'Pending',
+              'S', 'Shipped',
+              'D', 'Delivered') AS STATUS
+FROM HR.ORDERS o;
