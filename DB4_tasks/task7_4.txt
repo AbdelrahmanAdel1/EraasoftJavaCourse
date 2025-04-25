@@ -1,0 +1,54 @@
+CREATE TABLE HR.STUDENTS (
+Name VARCHAR2(100),
+Score number(3)
+);
+
+INSERT ALL 
+	INTO HR.STUDENTS VALUES ('Ahmed',70)
+	INTO HR.STUDENTS VALUES ('Mahmoud',90)
+	INTO HR.STUDENTS VALUES ('Ali',60)
+	INTO HR.STUDENTS VALUES ('Alaa',80)
+	INTO HR.STUDENTS VALUES ('Wesam',40)
+SELECT * FROM dual;
+
+
+SELECT s.*,
+    CASE
+        WHEN s.Score >= 90 THEN 'A'
+        WHEN s.Score BETWEEN 80 AND 89 THEN 'B'
+        WHEN s.Score BETWEEN 70 AND 79 THEN 'C'
+        ELSE 'F'
+END AS GRADE FROM HR.STUDENTS s;
+
+SELECT s.*,
+    CASE
+        WHEN s.Score >= 60 THEN 'Pass'
+        ELSE 'Fail'
+END AS GRADE FROM HR.STUDENTS s;
+
+SELECT s.*,
+    CASE
+        WHEN s.Score >= 90 THEN 'A'
+        WHEN s.Score BETWEEN 80 AND 89 THEN 'B'
+        WHEN s.Score BETWEEN 70 AND 79 THEN 'C'
+        ELSE 'F'
+END AS GRADE,
+    CASE
+        WHEN s.Score >= 90 THEN 'Excellent'
+        WHEN s.Score BETWEEN 80 AND 89 THEN 'Good'
+        WHEN s.Score BETWEEN 70 AND 79 THEN 'Average'
+        ELSE 'Needs Improvement'
+    END AS MESSAGE
+FROM HR.STUDENTS s;
+
+SELECT 
+    CASE TO_CHAR(SYSDATE, 'DY')
+        WHEN 'MON' THEN 'Today is Monday'
+        WHEN 'TUE' THEN 'Today is Tuesday'
+        WHEN 'WED' THEN 'Today is Wednesday'
+        WHEN 'THU' THEN 'Today is Thursday'
+        WHEN 'FRI' THEN 'Today is Friday'
+        WHEN 'SAT' THEN 'Today is Saturday'
+        WHEN 'SUN' THEN 'Today is Sunday'
+    END AS day_message
+FROM dual;

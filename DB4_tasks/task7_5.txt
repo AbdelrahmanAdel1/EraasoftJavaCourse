@@ -1,0 +1,41 @@
+SELECT s.*,
+       DECODE(TRUNC(s.Score/10),
+              9, 'A',
+              8, 'B',
+              7, 'C',
+              'F') AS GRADE
+FROM HR.STUDENTS s;
+
+CREATE TABLE HR.status_log(
+status_code char
+);
+
+INSERT ALL
+	INTO HR.status_log values('N')
+	INTO HR.status_log values('I')
+	INTO HR.status_log values('C')
+SELECT * FROM dual;
+
+SELECT 
+    DECODE(l.status_code,
+          'N', 'New',
+          'I', 'In Progress',
+          'C', 'Completed') AS code_description 
+FROM HR.status_log l;
+
+ALTER TABLE PRODUCT
+ADD quantity NUMBER(5);
+
+SELECT DECODE(p.QUANTITY,
+			 0,'Out of Stock',
+			 'Available'
+) AS avilability
+FROM HR.PRODUCT p;
+
+SELECT DECODE(e.JOB_ID,
+			  'HR_REP', 500,
+			  'IT_PROG', 1000,
+			  'SA_MAN', 1500,
+			  300
+) AS bouns
+FROM HR.EMPLOYEES e;

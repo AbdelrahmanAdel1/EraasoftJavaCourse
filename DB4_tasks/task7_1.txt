@@ -1,0 +1,16 @@
+CREATE TABLE HR.CUSTOMERS (
+    full_name VARCHAR2(50)
+);
+
+INSERT INTO CUSTOMERS (full_name) VALUES ('  Adel  ');
+INSERT INTO CUSTOMERS (full_name) VALUES (' Hassan ');
+INSERT INTO CUSTOMERS (full_name) VALUES (' Hafez ');
+INSERT INTO CUSTOMERS (full_name) VALUES ('##$**##Waleed####');
+
+SELECT TRIM(full_name) FROM HR.CUSTOMERS;
+
+SELECT LTRIM(full_name) FROM HR.CUSTOMERS;
+
+SELECT RTRIM(full_name) FROM HR.CUSTOMERS;
+
+SELECT LTRIM(RTRIM(full_name,'#$*'),'#$*') FROM HR.CUSTOMERS;
